@@ -1,0 +1,10 @@
+tqdm
+ftfy
+regex
+boto3
+av
+h5py
+numpy==1.26.4
+opencv-python
+matplotlib
+seaborn

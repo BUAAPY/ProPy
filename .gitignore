@@ -1,0 +1,6 @@
+*.jsonl
+*.zip
+**/__pycache__/
+logs/
+VIS/
+CLIP_weights/

@@ -1,0 +1,9 @@
+bash scripts/prvr_activitynet.sh
+bash scripts/prvr_charades.sh
+bash scripts/prvr_qvhighlights_test.sh
+bash scripts/prvr_qvhighlights_val.sh
+bash scripts/prvr_tvr.sh
+bash scripts/vcmr_activitynet.sh
+bash scripts/vcmr_charades.sh
+bash scripts/vcmr_qvhighlights_val.sh
+bash scripts/vcmr_tvr.sh
