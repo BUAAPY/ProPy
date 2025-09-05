@@ -6,7 +6,7 @@
 </div>
 
 ## Overview
-We propose ProPy, a model with systematic architectural adaption of CLIP specifically designed for PRVR.
+We propose ProPy ([arxiv](https://arxiv.org/abs/2508.19024)), a model with systematic architectural adaption of CLIP specifically designed for PRVR.
 
 ## Installation
 
