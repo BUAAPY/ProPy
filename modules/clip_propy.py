@@ -296,7 +296,7 @@ class ResidualAttentionBlock(nn.Module):
             attention_output_frames = attention_output_frames.reshape(-1, Nf, B, dim).permute(2, 1, 0, 3).flatten(0,1) # [Nv*Nf, G*G+1, Ev]
             attention_output_frames = self.temp_adapter(attention_output_frames, Nf)
             attention_output_frames = attention_output_frames.reshape(B, Nf, -1, dim).permute(2, 1, 0, 3) # [G*G+1, Nf, Nv, Ev]
-            attention_output_frames = attention_output_frames.reshape(-1, B, dim) # [G*G+1, Nf*Nv, Ev]
+            attention_output_frames = attention_output_frames.reshape(-1, B, dim) # [(G*G+1)*Nf, Nv, Ev]
 
 
             event_query = visual_prompt # [Ne, Nv, Ev]
