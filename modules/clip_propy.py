@@ -494,7 +494,7 @@ class VisualTransformer(nn.Module):
     def generate_attn_mask(self):
         Nf = self.args.Nf 
         n1 = self.level_event_cnts[-1]
-        Ne = sum(self.level_event_cnts)
+        Ne = self.args.Ne
         M_size = Ne + Nf 
         Nvp = self.args.Nvp 
         visual_token_len = self.visual_token_len 
