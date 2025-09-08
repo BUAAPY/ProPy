@@ -213,7 +213,7 @@ def get_args(description='DGL on Retrieval Task'):
                         choices=['linear'])
 
 
-    parser.add_argument('--prvr_train_annos', type=str, default='') # 如果要提交代码,记得把这些都删掉
+    parser.add_argument('--prvr_train_annos', type=str, default='') 
     parser.add_argument('--prvr_val_annos', type=str, default='')
     parser.add_argument('--video_dir', type=str, default='')
     
@@ -239,7 +239,7 @@ def get_args(description='DGL on Retrieval Task'):
         args.loose_type = False
     if args.datatype == 'activity':
         # pre-pooling to avoid OOM, only work for meanP with AcitivityNet when eval
-        args.pre_visual_pooling = 1  # 很贴心,防止爆显存
+        args.pre_visual_pooling = 1  
 
     # Check paramenters
     if args.gradient_accumulation_steps < 1:
@@ -259,14 +259,14 @@ def get_args(description='DGL on Retrieval Task'):
     args.log_level = logging.DEBUG if args.debug else logging.INFO
 
     # new added params
-    if args.shared_latent_space == 'transformer':  # 这里竟然是手动设置的
+    if args.shared_latent_space == 'transformer':  
         args.new_added_modules = ['PromptTransformer','unified_prompt_mlp','unified_prompt_embedding','prompt_proj','prompt_embeddings']
     elif args.shared_latent_space == 'linear':
         args.new_added_modules = ['visual_prompt_embedding','global_prompts','prefix_proj','postfix_proj','v2t_mlp']
     else:
         raise NotImplementedError('invalid shared_latent_space')
     
-    args.new_added_modules += ['temp_adapter', 'frame_embedding'] 
+    args.new_added_modules += ['temp_adapter', 'frame_embedding'] # add names of new trainable parameters here!
 
     # If some params are not passed, we use the default values based on model name.
     default_params = get_default_params(args.pretrained_clip_name)
